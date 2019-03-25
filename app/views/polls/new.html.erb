@@ -1,0 +1,13 @@
+<h1>Create new Poll</h1>
+
+<%= form_for @poll do |f| %>
+  <%= f.label :question %>
+  <%= f.text_field :question %><br>
+  <%= f.label :answer_one %>
+  <%= f.text_field :answer_one %><br>
+  <%= f.label :answer_two %>
+  <%= f.text_field :answer_two %><br>
+  <%= f.label :user_id %>
+  <%= collection_select(:poll, :user_id, User.all, :id, :username) %><br>
+  <%= f.submit %>
+<% end %>

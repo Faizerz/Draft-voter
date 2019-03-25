@@ -1,5 +1,11 @@
-<% @polls.each do |poll| %>
-  <h1><%= poll.question %></h1>
-  <h2><%= poll.answer_one %> OR <%= poll.answer_two %></h2>
-  <h5>Created by: <%= poll.user.username %></h5>
-<% end %>
+<div class="container is-fluid">
+
+  <% @polls.each do |poll| %>
+  <div class="box is-centered" style="text-align: center">
+    <h1><%= poll.question %></h1>
+    <h2><%= poll.answer_one %> OR <%= poll.answer_two %></h2>
+    <h5>Created by: <%= poll.user.username %></h5>
+  </div>
+  <% end %>
+
+</div>

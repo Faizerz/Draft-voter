@@ -12,13 +12,9 @@ class PollsController < ApplicationController
  end
 
  def create
-   @poll = Poll.new(poll_params)
-   if @poll.valid?
-     @poll.save
-     redirect_to @poll
-   else
-     render :new
-   end
+   @poll = Poll.create(poll_params)
+
+   redirect_to @poll
  end
 
  private
