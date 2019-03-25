@@ -7,7 +7,7 @@ ruby '2.6.1'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.6'
-
+# Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -26,9 +26,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
-gem 'bulma'
+gem 'bulma-rails', '~> 0.7.4'
 gem 'simple_form', '~> 4.1'
+# gem 'gravatar_image_tag', '~> 1.2'
+gem 'devise', '~> 4.6', '>= 4.6.1'
+# gem 'binding_of_caller', '~> 0.8.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -50,6 +52,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'better_errors', '~> 2.1', '>= 2.1.1'
+  # gem 'guard', '~> 2.15'
+  # gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
 
 group :test do
