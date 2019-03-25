@@ -1,0 +1,5 @@
+{
+  "name": "--no-test-framework",
+  "private": true,
+  "dependencies": {}
+}
