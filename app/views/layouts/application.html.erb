@@ -14,16 +14,25 @@
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="#">iVote</a>
+        <a class="navbar-item" href="<%= root_path %>">iVote</a>
       </div>
 
+    <% if user_signed_in? %>
       <div class="navbar-menu">
-        <a class="navbar-item" href="#">Polls</a>
-        <a class="navbar-item" href="#">Polls</a>
-        <a class="navbar-item" href="#">Polls</a>
-        <a class="navbar-item" href="#">Polls</a>
+        <a class="navbar-item" href="<%= polls_path %>">Polls</a>
+        <a class="navbar-item" href="<%= users_path %>">Users</a>
+        <a class="navbar-item" href="<%= edit_user_registration_path(current_user.name) %>">Profile</a>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:'navbar-item' %>
+
       </div>
-    </nav>
+    <% else %>
+      <div class="navbar-menu">
+        <a class="navbar-item" href="<%= new_user_session_path %>">Sign In</a>
+        <a class="navbar-item" href="<%= new_user_registration_path %>">Sign Up</a>
+      </div>
+    <% end %>
+
+  </nav>
 
 
     <%= yield %>

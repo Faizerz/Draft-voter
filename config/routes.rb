@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root 'polls#index'
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :polls, :users
+  resources :votes, only: [:create]
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "polls#index"
 
-  resources :polls, only: [:index, :show, :new, :create]
-  resources :users
 end
