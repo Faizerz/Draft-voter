@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NoTestFramework</title>
+    <title>iVote</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">iVote</a>
+      </div>
+
+      <div class="navbar-menu">
+        <a class="navbar-item" href="#">Polls</a>
+        <a class="navbar-item" href="#">Polls</a>
+        <a class="navbar-item" href="#">Polls</a>
+        <a class="navbar-item" href="#">Polls</a>
+      </div>
+    </nav>
+
+
     <%= yield %>
   </body>
+
+  <footer class="footer">
+      <div class="content has-text-left">
+        <p>
+          <strong>iVote©</strong> by Kai & Fez.
+        </p>
+      </div>
+  </footer>
 </html>
