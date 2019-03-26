@@ -7,7 +7,9 @@
     <%= @user.name %>
     <br>
 
-    <% if current_user.following.!include?(@user.id) %>
+    <% logged_in_user = User.find(current_user.id) %>
+
+    <% if !logged_in_user.following.include?(@user.id) %>
     <%= form_tag(followers_path) %>
       <%= hidden_field_tag 'user_id', "#{current_user.id}" %>
       <%= hidden_field_tag 'followed_id', "#{params[:id]}" %>
@@ -34,8 +36,8 @@
         <%= button_tag(type: 'submit', class: "button is-success", value: false) do %>
         <% content_tag(:strong, poll.answer_two) %><% end %>
 
-      </form>
-
+        </form>
+        
     </h2><br>
     <% if Vote.all.where(poll_id: poll.id).count > 0 %>
       <%= green = (((Vote.all.where(poll_id: poll.id, vote: true).count).to_f/(Vote.all.where(poll_id: poll.id).count).to_f)*100).round %>%

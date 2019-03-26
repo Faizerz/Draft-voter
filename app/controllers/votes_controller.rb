@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   def create
+    voting_user = User.find_by(username: current_user.username)
     @vote = Vote.create(user_id: voting_user.id, poll_id: params[:poll_id].to_i, vote: params[:button])
 
     voted_on_poll_id = params[:poll_id].to_i
@@ -11,7 +12,7 @@ class VotesController < ApplicationController
 
     voting_user.update(score: (voter_current_score + 2))
     poll_creator.update(score: (creator_current_score + 1))
-    
+
     redirect_to polls_path
   end
 end
