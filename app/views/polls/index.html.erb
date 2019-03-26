@@ -28,7 +28,9 @@
           or
           <%= button_tag(type: 'button', class: "button is-success", value: false) do %>
           <% content_tag(:strong, poll.answer_two) %><% end %>
+
           <br><br>
+
           <div class="vote-bar" style="width:<%= red %>%; background-color:#ff3860; border-top-right-radius:0px; border-bottom-right-radius:0px"></div>
           <div class="vote-bar" style="width:<%= green %>%; background-color:#23d160; border-top-left-radius:0px; border-bottom-left-radius:0px;"></div>
 
