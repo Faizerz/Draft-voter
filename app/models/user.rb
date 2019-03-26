@@ -1,12 +1,17 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many :followers
-         has_many :votes
+  has_many :votes
+  has_many :polls, through: :votes
+  has_many :polls
 
-         has_many :polls, through: :votes
-         has_many :polls
+  def followers
+    Follower.where("followed_id = #{id}")
+  end
+
+  def following
+    Follower.where("follower_id = #{id}")
+  end
 end
