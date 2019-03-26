@@ -1,7 +1,20 @@
 <div class="box">
-@<%= @user.username %><% if @user.user_type != "free" %> ✔️<% end %>
-<br>
-<%= @user.name %>
+  @<%= @user.username %>
+  <% if @user.user_type != "free" %>
+    ✔️<% end %>
+  <br>
+  <%= @user.name %>
+  <br>
+
+  <% if current_user.following.!include?(@user.id) %>
+  <%= form_tag(followers_path) %>
+    <%= hidden_field_tag 'user_id', "#{current_user.id}" %>
+    <%= hidden_field_tag 'followed_id', "#{params[:id]}" %>
+    <%= button_tag(type: 'submit', class: "button is-info") do %>
+      <% content_tag(:strong, 'Follow') %>
+    <% end %>
+  </form>
+  <% end %>
 </div>
 <% @user.polls.each do |poll| %>
 <div class="box is-centered" style="text-align: center;">
@@ -11,26 +24,24 @@
 
     <%= form_tag(votes_path) %>
 
-      <%= hidden_field_tag 'poll_id', "#{poll.id}" %>
+    <%= hidden_field_tag 'poll_id', "#{poll.id}" %>
 
-      <%= button_tag(type: 'submit', class: "button is-danger", value: true) do %>
-        <% content_tag(:strong, poll.answer_one) %>
-      <% end %>
-      or
-      <%= button_tag(type: 'submit', class: "button is-success", value: false) do %>
-        <% content_tag(:strong, poll.answer_two) %>
-      <% end %>
+    <%= button_tag(type: 'submit', class: "button is-danger", value: true) do %>
+    <% content_tag(:strong, poll.answer_one) %><% end %>
+    or
+    <%= button_tag(type: 'submit', class: "button is-success", value: false) do %>
+    <% content_tag(:strong, poll.answer_two) %><% end %>
 
-    </form>
+  </form>
 
-  </h2><br>
-  <% if Vote.all.where(poll_id: poll.id).count > 0 %>
+</h2><br>
+<% if Vote.all.where(poll_id: poll.id).count > 0 %>
   <%= green = (((Vote.all.where(poll_id: poll.id, vote: true).count).to_f/(Vote.all.where(poll_id: poll.id).count).to_f)*100).round %>%
   <%= red = 100-green%>
-  <% end %>
+<% end %>
 
-
-  <h5 style="font-size:0.8em">Created by: <%= poll.user.username %></h5>
+<h5 style="font-size:0.8em">Created by:
+  <%= poll.user.username %></h5>
 </div>
 <% end %>
 

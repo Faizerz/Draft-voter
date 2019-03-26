@@ -2,7 +2,7 @@
 <div class="box">
   <h1 class="title is-1">Leaderboards</h1>
   <br>
-<% @users.sort.reverse.each do |user| %>
+<% @users.order(score: :desc).each do |user| %>
 <div class="box">
 <ol>
 <%=counter += 1%>. <%= link_to user.name, user_path(user) %><% if user.user_type != "free" %> ✔️<% end %>
