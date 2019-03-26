@@ -1,12 +1,20 @@
 <div class="box">
-<% @user = User.find(current_user.id) %>
-<div class="box">
-<% @user.followers.each do |f| %>
-  Followers: <%= link_to User.find(f.follower_id).username, user_path %><br>
-<% end %>
-</div>
-<div class="box">
-<% @user.followers.each do |f| %>
-  Following: <%= link_to User.find(f.followed_id).username, user_path %><br>
-<% end %>
+  <% @user = User.find(current_user.id) %>
+
+  <div class="box">
+    Followers:
+    <br>
+    <% @user.followers.each do |f| %>
+      <%= link_to User.find(f.follower_id).username, user_path(@user) %><br>
+    <% end %>
+  </div>
+
+  <div class="box">
+    Following:
+    <br>
+    <% @user.following.each do |f| %>
+      <%= link_to User.find(f.followed_id).username, user_path(@user) %><br>
+    <% end %>
+  </div>
+
 </div>
