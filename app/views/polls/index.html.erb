@@ -35,6 +35,10 @@
           <div class="vote-bar" style="width:<%= green %>%; background-color:#23d160; border-top-left-radius:0px; border-bottom-left-radius:0px;"></div>
 
           <%= red %>% - <%= green %>%
+          <br><br>
+          Total Votes
+          <br>
+          <%= poll.votes.where(vote: true).count %>  -  <%=  poll.votes.where(vote: false).count%>
         <% end %>
 
       </form>
