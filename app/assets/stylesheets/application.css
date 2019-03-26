@@ -16,3 +16,7 @@
 .button:hover{
   -webkit-transform-origin-y: 3px;
 }
+
+#poll_question, #poll_answer_one, #poll_answer_two{
+  width:100%;
+}

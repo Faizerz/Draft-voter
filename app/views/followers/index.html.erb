@@ -1,0 +1,5 @@
+<% @user = User.find(current_user.id) %>
+
+<% @user.followers.each do |f| %>
+  <%= User.find(f.follower_id).username %><br>
+<% end %>

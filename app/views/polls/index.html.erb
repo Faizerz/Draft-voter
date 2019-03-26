@@ -1,6 +1,5 @@
 <div class="container is-fluid" style="margin-top:20px; margin-bottom:20px;">
 
-
   <% @polls.reverse.each do |poll| %>
     <div class="box is-centered" style="text-align: center;">
       <h1 style="font-size:2em"><%= poll.question %></h1><br>
@@ -9,27 +8,25 @@
 
         <%= form_tag(votes_path) %>
 
-          <%= hidden_field_tag 'poll_id', "#{poll.id}" %>
+        <%= hidden_field_tag 'poll_id', "#{poll.id}" %>
 
-          <%= button_tag(type: 'submit', class: "button is-danger", value: true) do %>
-            <% content_tag(:strong, poll.answer_one) %>
-          <% end %>
-          or
-          <%= button_tag(type: 'submit', class: "button is-success", value: false) do %>
-            <% content_tag(:strong, poll.answer_two) %>
-          <% end %>
+        <%= button_tag(type: 'submit', class: "button is-danger", value: true) do %>
+        <% content_tag(:strong, poll.answer_one) %><% end %>
+        or
+        <%= button_tag(type: 'submit', class: "button is-success", value: false) do %>
+        <% content_tag(:strong, poll.answer_two) %><% end %>
 
-        </form>
+      </form>
 
-      </h2><br>
-      <% if Vote.all.where(poll_id: poll.id).count > 0 %>
+    </h2><br>
+    <% if Vote.all.where(poll_id: poll.id).count > 0 %>
       <%= green = (((Vote.all.where(poll_id: poll.id, vote: true).count).to_f/(Vote.all.where(poll_id: poll.id).count).to_f)*100).round %>%
-      <%= red = 100-green%>
-      <% end %>
+      <%= red = 100-green%>%
+    <% end %>
 
-
-      <h5 style="font-size:0.8em">Created by:<%= poll.user.username %></h5>
-    </div>
-  <% end %>
+    <h5 style="font-size:0.8em">Created by:
+      <%= link_to poll.user.username, user_path(poll.user.id) %></h5>
+  </div>
+<% end %>
 
 </div>
