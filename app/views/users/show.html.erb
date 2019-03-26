@@ -1,17 +1,21 @@
 <div class="container is-fluid" style="margin-top:20px; margin-bottom:20px;">
   <div class="box">
+    @<%= @user.username %>
+    <% if @user.user_type != "free" %>
+      ✔️<% end %>
+    <br>
     <%= @user.name %>
     <br>
-    @<%= @user.username %>
-    <br>
-    Score:
-    <%= @user.score %>
-    <br>
-    <%= link_to "Followers", followers_path(@user)%>
-    <%= @user.followers.count %>
-    <br>
-    <%= link_to "Following", followers_path(@user)%>
-    <%= @user.following.count %>
+
+    <% if current_user.following.!include?(@user.id) %>
+    <%= form_tag(followers_path) %>
+      <%= hidden_field_tag 'user_id', "#{current_user.id}" %>
+      <%= hidden_field_tag 'followed_id', "#{params[:id]}" %>
+      <%= button_tag(type: 'submit', class: "button is-info") do %>
+        <% content_tag(:strong, 'Follow') %>
+      <% end %>
+    </form>
+    <% end %>
   </div>
 
   <% @user.polls.reverse.each do |poll| %>
