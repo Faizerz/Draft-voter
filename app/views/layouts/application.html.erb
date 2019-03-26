@@ -20,9 +20,30 @@
     <% if user_signed_in? %>
       <div class="navbar-menu">
         <a class="navbar-item" href="<%= polls_path %>">Polls</a>
+        <a class="navbar-item" href="<%= new_poll_path %>">New Poll</a>
         <a class="navbar-item" href="<%= users_path %>">Users</a>
-        <a class="navbar-item" href="<%= edit_user_registration_path(current_user.name) %>">Profile</a>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:'navbar-item' %>
+
+
+
+    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          <%= current_user.username %>
+        </a>
+
+        <div class="navbar-dropdown is-right">
+          <a class="navbar-item" href="<%= user_path(current_user) %>">Profile</a>
+          <a class="navbar-item" href="<%= edit_user_registration_path(current_user.name) %>">Edit Profile</a>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class:'navbar-item' %>
+          <hr class="navbar-divider">
+          <div class="navbar-item">
+            Score: <%= current_user.score %>
+          </div>
+        </div>
+
+  </div>
+</div>
+</div>
 
       </div>
     <% else %>

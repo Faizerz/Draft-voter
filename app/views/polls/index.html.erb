@@ -22,9 +22,10 @@
         </form>
 
       </h2><br>
-
+      <% if Vote.all.where(poll_id: poll.id).count > 0 %>
       <%= green = (((Vote.all.where(poll_id: poll.id, vote: true).count).to_f/(Vote.all.where(poll_id: poll.id).count).to_f)*100).round %>%
-      <%= red = 100-green%>%
+      <%= red = 100-green%>
+      <% end %>
 
 
       <h5 style="font-size:0.8em">Created by:<%= poll.user.username %></h5>
