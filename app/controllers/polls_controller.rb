@@ -13,7 +13,9 @@ class PollsController < ApplicationController
 
  def create
    @poll = Poll.create(poll_params)
-
+   creating_user = User.find_by(username: current_user.username)
+   current_score = creating_user.score
+   creating_user.update(score: (current_score-10))
    redirect_to @poll
  end
 

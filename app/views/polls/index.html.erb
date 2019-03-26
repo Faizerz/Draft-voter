@@ -1,7 +1,7 @@
 <div class="container is-fluid" style="margin-top:20px; margin-bottom:20px;">
 
 
-  <% @polls.each do |poll| %>
+  <% @polls.reverse.each do |poll| %>
     <div class="box is-centered" style="text-align: center;">
       <h1 style="font-size:2em"><%= poll.question %></h1><br>
 
