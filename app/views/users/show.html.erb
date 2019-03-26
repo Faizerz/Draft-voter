@@ -1,44 +1,36 @@
 <div class="box">
-  <%= @user.name %>
-  <br>
-  @<%= @user.username %>
-  <br>
-  Score:
-  <%= @user.score %>
-  <br>
-  Followers:
-  <%= @user.followers.count %>
-  <br>
-  Following:
-  <%= @user.following.count %>
+@<%= @user.username %><% if @user.user_type != "free" %> ✔️<% end %>
+<br>
+<%= @user.name %>
 </div>
-
 <% @user.polls.each do |poll| %>
-  <div class="box is-centered" style="text-align: center;">
-    <h1 style="font-size:2em"><%= poll.question %></h1><br>
+<div class="box is-centered" style="text-align: center;">
+  <h1 style="font-size:2em"><%= poll.question %></h1><br>
 
-    <h2 style="font-size:1.5em">
+  <h2 style="font-size:1.5em">
 
-      <%= form_tag(votes_path) %>
+    <%= form_tag(votes_path) %>
 
       <%= hidden_field_tag 'poll_id', "#{poll.id}" %>
 
       <%= button_tag(type: 'submit', class: "button is-danger", value: true) do %>
-      <% content_tag(:strong, poll.answer_one) %><% end %>
+        <% content_tag(:strong, poll.answer_one) %>
+      <% end %>
       or
       <%= button_tag(type: 'submit', class: "button is-success", value: false) do %>
-      <% content_tag(:strong, poll.answer_two) %><% end %>
+        <% content_tag(:strong, poll.answer_two) %>
+      <% end %>
 
     </form>
 
   </h2><br>
   <% if Vote.all.where(poll_id: poll.id).count > 0 %>
-    <%= green = (((Vote.all.where(poll_id: poll.id, vote: true).count).to_f/(Vote.all.where(poll_id: poll.id).count).to_f)*100).round %>%
-    <%= red = 100-green%>%
+  <%= green = (((Vote.all.where(poll_id: poll.id, vote: true).count).to_f/(Vote.all.where(poll_id: poll.id).count).to_f)*100).round %>%
+  <%= red = 100-green%>
   <% end %>
 
-  <h5 style="font-size:0.8em">Created by:
-    <%= poll.user.username %></h5>
+
+  <h5 style="font-size:0.8em">Created by: <%= poll.user.username %></h5>
 </div>
 <% end %>
 
