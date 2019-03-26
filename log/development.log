@@ -11683,3 +11683,2520 @@ ActionView::Template::Error (undefined local variable or method `“free”' for
     6: 
   
 app/views/polls/new.html.erb:3:in `_app_views_polls_new_html_erb___4269081827201765721_70128395020920'
+Started DELETE "/users/sign_out" for ::1 at 2019-03-26 09:46:32 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TFQsC28uabRgZvAhEOnvL6ZCK48W8PH2z2hxDQyjdvb4KeSvFKr7GF0lSSUOysil+Ip2Y8KsrSee5oz+g4JhVw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2019-03-26 09:46:32.642323"], ["id", 4]]
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 74ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-26 09:46:32 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (122.3ms)
+Completed 200 OK in 501ms (Views: 481.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-26 09:46:35 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (137.9ms)
+Completed 200 OK in 162ms (Views: 155.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-26 09:46:38 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MYQQ+2080n/HQ6nC6TxJxYsRnZNbBvL0Lk0fiNgTBbZbsJInjlYZ9qDCGDof4StzAKW+SRgCdJeVzj0OSzkgLg==", "user"=>{"email"=>"flatiron@email.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "flatiron@email.com"], ["LIMIT", 1]]
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2019-03-26 09:46:38.213458"], ["updated_at", "2019-03-26 09:46:38.214663"], ["id", 4]]
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 156ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-26 09:46:38 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.8ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (31.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 62ms (Views: 55.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 09:46:44 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 09:47:38 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/polls" for ::1 at 2019-03-26 09:47:56 +0000
+Processing by PollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hHuk9SglZI5YzC18LzyKC6oQY6ikq+g83MxP878ye6WZGpM0AgfF+llfZ8UEjBIR9mweykx0vhTdWfKN4Bye6A==", "poll"=>{"question"=>"Recusandae Incidunt", "answer_one"=>"Voluptas facere eu e", "answer_two"=>"Architecto id non m", "user_id"=>""}, "commit"=>"Create Poll"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/polls_controller.rb:18
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", -14], ["updated_at", "2019-03-26 09:47:56.855514"], ["id", 4]]
+  ↳ app/controllers/polls_controller.rb:18
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/polls_controller.rb:18
+Redirected to http://localhost:3000/polls
+Completed 302 Found in 72208ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 09:49:09 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (40.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 65ms (Views: 60.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 09:49:11 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 92ms (Views: 88.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 09:50:38 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for 4:Integer):
+    19:             <%= f.text_field :answer_one %><br>
+    20:             <%= f.label :answer_two %>
+    21:             <%= f.text_field :answer_two %><br>
+    22:             <%= f.hidden_field :user_id, @user.id %><br>
+    23:             <%= f.submit %>
+    24:           <% end %>
+    25:         <% end %>
+  
+app/views/polls/new.html.erb:22:in `block in _app_views_polls_new_html_erb___2474184001524724046_70233204062660'
+app/views/polls/new.html.erb:15:in `_app_views_polls_new_html_erb___2474184001524724046_70233204062660'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:50:47 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  Rendered polls/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:22: syntax error, unexpected ',', expecting ')'
+...end=( f.hidden_field (:user_id, @user.id) );@output_buffer.s...
+...                              ^
+/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:22: syntax error, unexpected ')', expecting end
+...en_field (:user_id, @user.id) );@output_buffer.safe_append='...
+...                              ^
+/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:32: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/polls/new.html.erb:22: syntax error, unexpected ',', expecting ')'
+app/views/polls/new.html.erb:22: syntax error, unexpected ')', expecting end
+app/views/polls/new.html.erb:32: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/polls/new" for ::1 at 2019-03-26 09:51:08 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  Rendered polls/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:22: syntax error, unexpected ',', expecting ')'
+...end=( f.hidden_field (:user_id, :"#{@user.id}") );@output_bu...
+...                              ^
+/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:22: syntax error, unexpected ')', expecting end
+...ld (:user_id, :"#{@user.id}") );@output_buffer.safe_append='...
+...                              ^
+/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:32: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/polls/new.html.erb:22: syntax error, unexpected ',', expecting ')'
+app/views/polls/new.html.erb:22: syntax error, unexpected ')', expecting end
+app/views/polls/new.html.erb:32: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/polls/new" for ::1 at 2019-03-26 09:51:49 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  Rendered polls/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:22: syntax error, unexpected ',', expecting ')'
+...=( f.hidden_field (:"#{@user}", :user_id) );@output_buffer.s...
+...                              ^
+/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:32: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/polls/new.html.erb:22: syntax error, unexpected ',', expecting ')'
+app/views/polls/new.html.erb:32: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/polls/new" for ::1 at 2019-03-26 09:52:01 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  Rendered polls/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:22: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+....hidden_field (@user, :user_id) );@output_buffer.safe_append...
+...                              ^
+/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:24: syntax error, unexpected end, expecting ')'
+'.freeze;           end 
+                    ^~~
+/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:32: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/flatiron/Development/code/iVoter/app/views/polls/new.html.erb:34: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/polls/new.html.erb:22: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/polls/new.html.erb:24: syntax error, unexpected end, expecting ')'
+app/views/polls/new.html.erb:32: syntax error, unexpected ensure, expecting ')'
+app/views/polls/new.html.erb:34: syntax error, unexpected end, expecting ')'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:52:11 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :user_id:Symbol):
+    19:             <%= f.text_field :answer_one %><br>
+    20:             <%= f.label :answer_two %>
+    21:             <%= f.text_field :answer_two %><br>
+    22:             <%= f.hidden_field @user, :user_id %><br>
+    23:             <%= f.submit %>
+    24:           <% end %>
+    25:         <% end %>
+  
+app/views/polls/new.html.erb:22:in `block in _app_views_polls_new_html_erb___2474184001524724046_70233218177060'
+app/views/polls/new.html.erb:15:in `_app_views_polls_new_html_erb___2474184001524724046_70233218177060'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:52:22 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (35.9ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `#<User:0x00007fc0e4b31f58>' for #<Poll:0x00007fc0e45cf240>):
+    19:             <%= f.text_field :answer_one %><br>
+    20:             <%= f.label :answer_two %>
+    21:             <%= f.text_field :answer_two %><br>
+    22:             <%= f.hidden_field @user %><br>
+    23:             <%= f.submit %>
+    24:           <% end %>
+    25:         <% end %>
+  
+app/views/polls/new.html.erb:22:in `block in _app_views_polls_new_html_erb___2474184001524724046_70233220869880'
+app/views/polls/new.html.erb:15:in `_app_views_polls_new_html_erb___2474184001524724046_70233220869880'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:52:29 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `4' for #<Poll:0x00007fc0dfc42e38>):
+    19:             <%= f.text_field :answer_one %><br>
+    20:             <%= f.label :answer_two %>
+    21:             <%= f.text_field :answer_two %><br>
+    22:             <%= f.hidden_field @user.id %><br>
+    23:             <%= f.submit %>
+    24:           <% end %>
+    25:         <% end %>
+  
+app/views/polls/new.html.erb:22:in `block in _app_views_polls_new_html_erb___2474184001524724046_70233182309800'
+app/views/polls/new.html.erb:15:in `_app_views_polls_new_html_erb___2474184001524724046_70233182309800'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:52:48 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for 4:Integer):
+    19:             <%= f.text_field :answer_one %><br>
+    20:             <%= f.label :answer_two %>
+    21:             <%= f.text_field :answer_two %><br>
+    22:             <%= f.hidden_field :user_id, @user.id %><br>
+    23:             <%= f.submit %>
+    24:           <% end %>
+    25:         <% end %>
+  
+app/views/polls/new.html.erb:22:in `block in _app_views_polls_new_html_erb___2474184001524724046_70233173862760'
+app/views/polls/new.html.erb:15:in `_app_views_polls_new_html_erb___2474184001524724046_70233173862760'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:53:24 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :id:Symbol):
+    19:             <%= f.text_field :answer_one %><br>
+    20:             <%= f.label :answer_two %>
+    21:             <%= f.text_field :answer_two %><br>
+    22:             <%= f.hidden_field :user, :id %><br>
+    23:             <%= f.submit %>
+    24:           <% end %>
+    25:         <% end %>
+  
+app/views/polls/new.html.erb:22:in `block in _app_views_polls_new_html_erb___2474184001524724046_70233218417760'
+app/views/polls/new.html.erb:15:in `_app_views_polls_new_html_erb___2474184001524724046_70233218417760'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:54:14 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :"4":Symbol):
+    19:             <%= f.text_field :answer_one %><br>
+    20:             <%= f.label :answer_two %>
+    21:             <%= f.text_field :answer_two %><br>
+    22:             <%= f.hidden_field :user, :"#{@user.id}" %><br>
+    23:             <%= f.submit %>
+    24:           <% end %>
+    25:         <% end %>
+  
+app/views/polls/new.html.erb:22:in `block in _app_views_polls_new_html_erb___2474184001524724046_70233174189660'
+app/views/polls/new.html.erb:15:in `_app_views_polls_new_html_erb___2474184001524724046_70233174189660'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:54:29 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `4' for #<Poll:0x00007fc0dfc89838>):
+    19:             <%= f.text_field :answer_one %><br>
+    20:             <%= f.label :answer_two %>
+    21:             <%= f.text_field :answer_two %><br>
+    22:             <%= f.hidden_field :"#{@user.id}" %><br>
+    23:             <%= f.submit %>
+    24:           <% end %>
+    25:         <% end %>
+  
+app/views/polls/new.html.erb:22:in `block in _app_views_polls_new_html_erb___2474184001524724046_70233182454440'
+app/views/polls/new.html.erb:15:in `_app_views_polls_new_html_erb___2474184001524724046_70233182454440'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:54:41 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `4' for #<Poll:0x00007fc0e269d458>):
+    19:             <%= f.text_field :answer_one %><br>
+    20:             <%= f.label :answer_two %>
+    21:             <%= f.text_field :answer_two %><br>
+    22:             <%= f.hidden_field @user.id %><br>
+    23:             <%= f.submit %>
+    24:           <% end %>
+    25:         <% end %>
+  
+app/views/polls/new.html.erb:22:in `block in _app_views_polls_new_html_erb___2474184001524724046_70233204535460'
+app/views/polls/new.html.erb:15:in `_app_views_polls_new_html_erb___2474184001524724046_70233204535460'
+Started GET "/polls/new" for ::1 at 2019-03-26 09:55:10 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 09:55:45 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/polls" for ::1 at 2019-03-26 09:56:22 +0000
+Processing by PollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pehMz3PzwKRSaKbfwd2yG8TT1GcrvitOtt6JsplpcdW4iXsOWdFh0FP77GbqbSoBmK+pBcNhfWa3SzTMxkeUmA==", "poll"=>{"question"=>"How many biscuits can I eat in 1 minute", "answer_one"=>"10", "answer_two"=>"2", "user_id"=>"4"}, "commit"=>"Create Poll"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mPoll Create (0.6ms)[0m  [1m[32mINSERT INTO "polls" ("user_id", "question", "answer_one", "answer_two", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 4], ["question", "How many biscuits can I eat in 1 minute"], ["answer_one", "10"], ["answer_two", "2"], ["created_at", "2019-03-26 09:56:22.780413"], ["updated_at", "2019-03-26 09:56:22.780413"]]
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/polls_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", -24], ["updated_at", "2019-03-26 09:56:22.789144"], ["id", 4]]
+  ↳ app/controllers/polls_controller.rb:18
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/polls_controller.rb:18
+Redirected to http://localhost:3000/polls/5
+Completed 302 Found in 14443ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/polls/5" for ::1 at 2019-03-26 09:56:37 +0000
+Processing by PollsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:7
+  Rendering polls/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/show.html.erb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/show.html.erb:27
+  Rendered polls/show.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-26 09:56:40 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (81.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 109ms (Views: 101.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 09:56:41 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (34.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 72ms (Views: 66.0ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/votes" for ::1 at 2019-03-26 09:56:44 +0000
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1GNn6Gs/gHU8WONl2zdGgm+j7vY3oTpnKgZhdtYSTf5XMr8gDE7uatM43PdCgRczZKpHe7Q27dy3AyikFtNW1Q==", "poll_id"=>"5", "button"=>"true"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mVote Create (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("poll_id", "user_id", "vote", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["poll_id", 5], ["user_id", 4], ["vote", 1], ["created_at", "2019-03-26 09:56:44.654290"], ["updated_at", "2019-03-26 09:56:44.654290"]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", -23], ["updated_at", "2019-03-26 09:56:44.658721"], ["id", 4]]
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+No template found for VotesController#create, rendering head :no_content
+Completed 204 No Content in 33ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 09:56:46 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (34.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 62ms (Views: 55.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 09:57:22 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (34.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 59ms (Views: 52.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 09:57:44 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/polls/3" for ::1 at 2019-03-26 09:57:47 +0000
+Processing by PollsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:7
+  Rendering polls/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/show.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/show.html.erb:22
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/show.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/show.html.erb:27
+  Rendered polls/show.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 41ms (Views: 35.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/polls" for ::1 at 2019-03-26 10:00:04 +0000
+Processing by PollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jvpWhuYqL/qa29HwOps7wzUY6bMGuVdGd0gNvncYYEY53l01eCImXJ1+cQx+dKa6t0KgRoPRRldlt5ANRL5o2g==", "poll"=>{"question"=>"Where is better", "answer_one"=>"London", "answer_two"=>"New York", "user_id"=>"4"}, "commit"=>"Create Poll"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mPoll Create (0.5ms)[0m  [1m[32mINSERT INTO "polls" ("user_id", "question", "answer_one", "answer_two", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 4], ["question", "Where is better"], ["answer_one", "London"], ["answer_two", "New York"], ["created_at", "2019-03-26 10:00:04.337535"], ["updated_at", "2019-03-26 10:00:04.337535"]]
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/polls_controller.rb:19
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "user_type" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", -33], ["user_type", "free"], ["updated_at", "2019-03-26 10:00:04.346974"], ["id", 4]]
+  ↳ app/controllers/polls_controller.rb:19
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/polls_controller.rb:19
+Redirected to http://localhost:3000/polls/6
+Completed 302 Found in 56ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/polls/6" for ::1 at 2019-03-26 10:00:04 +0000
+Processing by PollsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:7
+  Rendering polls/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/show.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/show.html.erb:27
+  Rendered polls/show.html.erb within layouts/application (10.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 82ms (Views: 77.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 10:00:33 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 55ms (Views: 33.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 10:01:53 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/polls" for ::1 at 2019-03-26 10:02:32 +0000
+Processing by PollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OpltKrlqXmBrdC2KGkwBp51LHORbq+LHAoaaUbX6Lpcn+Frrk0j/FGrnZzMx/Jm9wTdhhrN0tO8DEycv6tTL2g==", "poll"=>{"question"=>"What comes first", "answer_one"=>"Wizard", "answer_two"=>"Dinosaur ", "user_id"=>"4"}, "commit"=>"Create Poll"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mPoll Create (0.6ms)[0m  [1m[32mINSERT INTO "polls" ("user_id", "question", "answer_one", "answer_two", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 4], ["question", "What comes first"], ["answer_one", "Wizard"], ["answer_two", "Dinosaur "], ["created_at", "2019-03-26 10:02:32.956068"], ["updated_at", "2019-03-26 10:02:32.956068"]]
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/polls_controller.rb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:16
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:16
+Redirected to http://localhost:3000/polls/7
+Completed 302 Found in 21ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/polls/7" for ::1 at 2019-03-26 10:02:32 +0000
+Processing by PollsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/polls_controller.rb:7
+  Rendering polls/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/show.html.erb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/show.html.erb:27
+  Rendered polls/show.html.erb within layouts/application (26.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 66ms (Views: 59.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 10:02:37 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.5ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (49.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 72ms (Views: 63.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 10:03:42 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (37.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 62ms (Views: 55.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/users/4" for ::1 at 2019-03-26 10:03:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPoll Load (0.4ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/users/show.html.erb:27
+  Rendered users/show.html.erb within layouts/application (22.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 10:03:48 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.4ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (104.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 135ms (Views: 124.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 10:04:16 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.4ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (45.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 69ms (Views: 62.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/4" for ::1 at 2019-03-26 10:04:19 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/users/show.html.erb:27
+  Rendered users/show.html.erb within layouts/application (20.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 58ms (Views: 49.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 10:04:24 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (1.0ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (65.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 102ms (Views: 86.3ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/users/1" for ::1 at 2019-03-26 10:04:27 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (20.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 72ms (Views: 62.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/1" for ::1 at 2019-03-26 10:05:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (18.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/1" for ::1 at 2019-03-26 10:05:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:29
+  Rendered users/show.html.erb within layouts/application (19.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 46ms (Views: 39.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/1" for ::1 at 2019-03-26 10:06:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  Rendered users/show.html.erb within layouts/application (17.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 10:11:38 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (76.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 129ms (Views: 95.9ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/votes" for ::1 at 2019-03-26 10:11:44 +0000
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuDWph7h3YzPbmeNRaJLsaIWHEkxrWUhwgbKaVR0ZltNsQ5ueZCzkyAOWB/cFBoAqR+1xLI6sppfA4O7lLV9cA==", "poll_id"=>"4", "button"=>"true"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mVote Create (0.5ms)[0m  [1m[32mINSERT INTO "votes" ("poll_id", "user_id", "vote", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["poll_id", 4], ["user_id", 4], ["vote", 1], ["created_at", "2019-03-26 10:11:44.940663"], ["updated_at", "2019-03-26 10:11:44.940663"]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", 11], ["updated_at", "2019-03-26 10:11:44.945567"], ["id", 4]]
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+No template found for VotesController#create, rendering head :no_content
+Completed 204 No Content in 32ms (ActiveRecord: 6.1ms)
+
+
+Started POST "/votes" for ::1 at 2019-03-26 10:11:46 +0000
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuDWph7h3YzPbmeNRaJLsaIWHEkxrWUhwgbKaVR0ZltNsQ5ueZCzkyAOWB/cFBoAqR+1xLI6sppfA4O7lLV9cA==", "poll_id"=>"4", "button"=>"true"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mVote Create (1.0ms)[0m  [1m[32mINSERT INTO "votes" ("poll_id", "user_id", "vote", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["poll_id", 4], ["user_id", 4], ["vote", 1], ["created_at", "2019-03-26 10:11:46.190054"], ["updated_at", "2019-03-26 10:11:46.190054"]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", 12], ["updated_at", "2019-03-26 10:11:46.194936"], ["id", 4]]
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+No template found for VotesController#create, rendering head :no_content
+Completed 204 No Content in 31ms (ActiveRecord: 6.2ms)
+
+
+Started POST "/votes" for ::1 at 2019-03-26 10:11:46 +0000
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuDWph7h3YzPbmeNRaJLsaIWHEkxrWUhwgbKaVR0ZltNsQ5ueZCzkyAOWB/cFBoAqR+1xLI6sppfA4O7lLV9cA==", "poll_id"=>"4", "button"=>"true"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mVote Create (0.7ms)[0m  [1m[32mINSERT INTO "votes" ("poll_id", "user_id", "vote", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["poll_id", 4], ["user_id", 4], ["vote", 1], ["created_at", "2019-03-26 10:11:46.372175"], ["updated_at", "2019-03-26 10:11:46.372175"]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", 13], ["updated_at", "2019-03-26 10:11:46.377461"], ["id", 4]]
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+No template found for VotesController#create, rendering head :no_content
+Completed 204 No Content in 33ms (ActiveRecord: 5.5ms)
+
+
+Started POST "/votes" for ::1 at 2019-03-26 10:11:46 +0000
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuDWph7h3YzPbmeNRaJLsaIWHEkxrWUhwgbKaVR0ZltNsQ5ueZCzkyAOWB/cFBoAqR+1xLI6sppfA4O7lLV9cA==", "poll_id"=>"4", "button"=>"true"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mVote Create (0.9ms)[0m  [1m[32mINSERT INTO "votes" ("poll_id", "user_id", "vote", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["poll_id", 4], ["user_id", 4], ["vote", 1], ["created_at", "2019-03-26 10:11:46.523832"], ["updated_at", "2019-03-26 10:11:46.523832"]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", 14], ["updated_at", "2019-03-26 10:11:46.529978"], ["id", 4]]
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+No template found for VotesController#create, rendering head :no_content
+Completed 204 No Content in 39ms (ActiveRecord: 7.1ms)
+
+
+Started POST "/votes" for ::1 at 2019-03-26 10:11:46 +0000
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuDWph7h3YzPbmeNRaJLsaIWHEkxrWUhwgbKaVR0ZltNsQ5ueZCzkyAOWB/cFBoAqR+1xLI6sppfA4O7lLV9cA==", "poll_id"=>"4", "button"=>"true"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mVote Create (0.9ms)[0m  [1m[32mINSERT INTO "votes" ("poll_id", "user_id", "vote", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["poll_id", 4], ["user_id", 4], ["vote", 1], ["created_at", "2019-03-26 10:11:46.744195"], ["updated_at", "2019-03-26 10:11:46.744195"]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", 15], ["updated_at", "2019-03-26 10:11:46.754006"], ["id", 4]]
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+No template found for VotesController#create, rendering head :no_content
+Completed 204 No Content in 39ms (ActiveRecord: 8.6ms)
+
+
+Started POST "/votes" for ::1 at 2019-03-26 10:11:46 +0000
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuDWph7h3YzPbmeNRaJLsaIWHEkxrWUhwgbKaVR0ZltNsQ5ueZCzkyAOWB/cFBoAqR+1xLI6sppfA4O7lLV9cA==", "poll_id"=>"4", "button"=>"true"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mVote Create (0.6ms)[0m  [1m[32mINSERT INTO "votes" ("poll_id", "user_id", "vote", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["poll_id", 4], ["user_id", 4], ["vote", 1], ["created_at", "2019-03-26 10:11:46.916314"], ["updated_at", "2019-03-26 10:11:46.916314"]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", 16], ["updated_at", "2019-03-26 10:11:46.922117"], ["id", 4]]
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+No template found for VotesController#create, rendering head :no_content
+Completed 204 No Content in 30ms (ActiveRecord: 5.9ms)
+
+
+Started POST "/votes" for ::1 at 2019-03-26 10:11:47 +0000
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zuDWph7h3YzPbmeNRaJLsaIWHEkxrWUhwgbKaVR0ZltNsQ5ueZCzkyAOWB/cFBoAqR+1xLI6sppfA4O7lLV9cA==", "poll_id"=>"4", "button"=>"true"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flatiron"], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[36mVote Create (1.6ms)[0m  [1m[32mINSERT INTO "votes" ("poll_id", "user_id", "vote", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["poll_id", 4], ["user_id", 4], ["vote", 1], ["created_at", "2019-03-26 10:11:47.117232"], ["updated_at", "2019-03-26 10:11:47.117232"]]
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "score" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score", 17], ["updated_at", "2019-03-26 10:11:47.124218"], ["id", 4]]
+  ↳ app/controllers/votes_controller.rb:8
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:8
+No template found for VotesController#create, rendering head :no_content
+Completed 204 No Content in 31ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 10:11:55 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.4ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (48.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 69ms (Views: 61.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/users/4" for ::1 at 2019-03-26 10:12:07 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPoll Load (0.5ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/users/show.html.erb:30
+  Rendered users/show.html.erb within layouts/application (22.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 54ms (Views: 43.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/edit.Flatiron" for ::1 at 2019-03-26 10:12:09 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-26 10:12:11 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (25.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 43ms (Views: 37.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 10:12:14 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 48ms (Views: 40.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-26 10:12:18 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.4ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (61.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 104ms (Views: 96.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/polls" for ::1 at 2019-03-26 10:12:18 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (55.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 86ms (Views: 77.7ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/polls/new" for ::1 at 2019-03-26 10:12:21 +0000
+Processing by PollsController#new as HTML
+  Rendering polls/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/new.html.erb:1
+  Rendered polls/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 50ms (Views: 44.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-26 10:12:30 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:31
+  Rendered polls/index.html.erb within layouts/application (74.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 104ms (Views: 97.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users" for ::1 at 2019-03-26 10:12:55 +0000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 44ms (Views: 40.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2019-03-26 10:12:57 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:30
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:31
+  Rendered users/show.html.erb within layouts/application (25.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 59ms (Views: 50.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/1" for ::1 at 2019-03-26 10:16:53 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:35
+  Rendered users/show.html.erb within layouts/application (30.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 63ms (Views: 46.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/1" for ::1 at 2019-03-26 10:25:28 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "followers" WHERE (followed_id = 1)[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "followers" WHERE (follower_id = 1)[0m
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mPoll Load (0.4ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:36
+  Rendered users/show.html.erb within layouts/application (67.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 136ms (Views: 105.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/users/1" for ::1 at 2019-03-26 10:25:58 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "followers" WHERE (followed_id = 1)[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "followers" WHERE (follower_id = 1)[0m
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/users/show.html.erb:36
+  Rendered users/show.html.erb within layouts/application (20.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 70ms (Views: 63.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/followers" for ::1 at 2019-03-26 10:32:55 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/followers"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/followers" for ::1 at 2019-03-26 10:33:34 +0000
+Processing by FollowersController#index as HTML
+  Rendering followers/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mFollower Load (0.2ms)[0m  [1m[34mSELECT "followers".* FROM "followers" WHERE (followed_id = 4)[0m
+  ↳ app/views/followers/index.html.erb:3
+  Rendered followers/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 47ms (Views: 43.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/4" for ::1 at 2019-03-26 10:33:44 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "followers" WHERE (followed_id = 4)[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "followers" WHERE (follower_id = 4)[0m
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/users/show.html.erb:35
+  Rendered users/show.html.erb within layouts/application (49.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 76ms (Views: 65.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/4" for ::1 at 2019-03-26 10:34:01 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "followers" WHERE (followed_id = 4)[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "followers" WHERE (follower_id = 4)[0m
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mPoll Load (0.7ms)[0m  [1m[34mSELECT "polls".* FROM "polls" WHERE "polls"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/users/show.html.erb:35
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/users/show.html.erb:35
+  Rendered users/show.html.erb within layouts/application (25.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 60ms (Views: 52.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/followers" for ::1 at 2019-03-26 10:34:08 +0000
+Processing by FollowersController#index as HTML
+  Rendering followers/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mFollower Load (0.2ms)[0m  [1m[34mSELECT "followers".* FROM "followers" WHERE (followed_id = 4)[0m
+  ↳ app/views/followers/index.html.erb:3
+  Rendered followers/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 113ms (Views: 110.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/followers" for ::1 at 2019-03-26 10:34:10 +0000
+Processing by FollowersController#index as HTML
+  Rendering followers/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mFollower Load (0.3ms)[0m  [1m[34mSELECT "followers".* FROM "followers" WHERE (followed_id = 4)[0m
+  ↳ app/views/followers/index.html.erb:3
+  Rendered followers/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/followers" for ::1 at 2019-03-26 10:36:29 +0000
+Processing by FollowersController#index as HTML
+  Rendering followers/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mFollower Load (0.2ms)[0m  [1m[34mSELECT "followers".* FROM "followers" WHERE (followed_id = 4)[0m
+  ↳ app/views/followers/index.html.erb:3
+  Rendered followers/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-03-26 10:36:32 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ji3NYjjxItst5X1AmmgL5vjMg05OUH3kRcYqkUuTZh+TTPqjEtODryx2N/mx2JP8pLD+LKaPK8xEU5fvFL2DUg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2019-03-26 10:36:32.588809"], ["id", 4]]
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-26 10:36:32 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  Rendered polls/index.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 93ms (Views: 86.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-26 10:36:34 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 59ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-26 10:36:38 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k8i3CSh0FJF3C007oITDmBlG3cCWpVBsOe9v8rGTjvQhbbG7WZK7jbQRMA/Zfb5cEg9X3E2/fy9n7B72H+ExRQ==", "user"=>{"email"=>"faiz_abbas@hotmail.co.uk", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "faiz_abbas@hotmail.co.uk"], ["LIMIT", 1]]
+  ↳ /Users/flatiron/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 135ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-26 10:36:38 +0000
+Processing by PollsController#index as HTML
+  Rendering polls/index.html.erb within layouts/application
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/views/polls/index.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 7]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 6]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 5], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 5]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 4], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 4]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 3], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 3]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 2], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 2]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ? AND "votes"."vote" = ?[0m  [["poll_id", 1], ["vote", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."poll_id" = ?[0m  [["poll_id", 1]]
+  ↳ app/views/polls/index.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/polls/index.html.erb:28
+  Rendered polls/index.html.erb within layouts/application (28.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 50ms (Views: 44.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/followers" for ::1 at 2019-03-26 10:36:43 +0000
+Processing by FollowersController#index as HTML
+  Rendering followers/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mFollower Load (0.2ms)[0m  [1m[34mSELECT "followers".* FROM "followers" WHERE (followed_id = 1)[0m
+  ↳ app/views/followers/index.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:4
+  Rendered followers/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/followers" for ::1 at 2019-03-26 10:36:54 +0000
+Processing by FollowersController#index as HTML
+  Rendering followers/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mFollower Load (0.2ms)[0m  [1m[34mSELECT "followers".* FROM "followers" WHERE (followed_id = 1)[0m
+  ↳ app/views/followers/index.html.erb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:4
+  Rendered followers/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/followers" for ::1 at 2019-03-26 10:37:03 +0000
+Processing by FollowersController#index as HTML
+  Rendering followers/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:1
+  [1m[36mFollower Load (0.3ms)[0m  [1m[34mSELECT "followers".* FROM "followers" WHERE (followed_id = 1)[0m
+  ↳ app/views/followers/index.html.erb:3
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/followers/index.html.erb:4
+  Rendered followers/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 1.6ms)
+
+
