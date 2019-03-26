@@ -1,28 +1,47 @@
-<div class="container is-fluid" style="margin-top:20px; margin-bottom:20px;">
+<% @user = User.find(current_user.id) %>
 
+<div class="container is-fluid" style="margin-top:20px; margin-bottom:20px;">
   <% @polls.reverse.each do |poll| %>
     <div class="box is-centered" style="text-align: center;">
       <h1 style="font-size:2em"><%= poll.question %></h1><br>
-
       <h2 style="font-size:1.5em">
+
+        <% if Vote.all.where(poll_id: poll.id).count > 0 %>
+          <% red = (((Vote.all.where(poll_id: poll.id, vote: true).count).to_f/(Vote.all.where(poll_id: poll.id).count).to_f)*100).round %>
+          <% green = 100-red%>
+        <% end %>
 
         <%= form_tag(votes_path) %>
 
         <%= hidden_field_tag 'poll_id', "#{poll.id}" %>
 
-        <%= button_tag(type: 'submit', class: "button is-danger", value: true) do %>
-        <% content_tag(:strong, poll.answer_one) %><% end %>
-        or
-        <%= button_tag(type: 'submit', class: "button is-success", value: false) do %>
-        <% content_tag(:strong, poll.answer_two) %><% end %>
+        <% if !@user.votes.find_by(poll_id: poll.id) %>
+          <%= button_tag(type: 'submit', class: "button is-danger", value: true) do %>
+          <% content_tag(:strong, poll.answer_one) %><% end %>
+          or
+          <%= button_tag(type: 'submit', class: "button is-success", value: false) do %>
+          <% content_tag(:strong, poll.answer_two) %><% end %>
+        <% else %>
+          You voted for <b><u><%= @user.votes.find_by(poll_id: poll.id).vote ? poll.answer_one : poll.answer_two %></u></b> <br><br>
+          <%= button_tag(type: 'button', class: "button is-danger", value: true) do %>
+          <% content_tag(:strong, poll.answer_one) %><% end %>
+          or
+          <%= button_tag(type: 'button', class: "button is-success", value: false) do %>
+          <% content_tag(:strong, poll.answer_two) %><% end %>
+          <br><br>
+          <div class="vote-bar" style="width:<%= red %>%; background-color:#ff3860; border-top-right-radius:0px; border-bottom-right-radius:0px"></div>
+          <div class="vote-bar" style="width:<%= green %>%; background-color:#23d160; border-top-left-radius:0px; border-bottom-left-radius:0px;"></div>
+
+          <%= red %>% - <%= green %>%
+        <% end %>
 
       </form>
 
     </h2><br>
-    <% if Vote.all.where(poll_id: poll.id).count > 0 %>
-      <%= green = (((Vote.all.where(poll_id: poll.id, vote: true).count).to_f/(Vote.all.where(poll_id: poll.id).count).to_f)*100).round %>%
-      <%= red = 100-green%>%
-    <% end %>
+
+
+
+
 
     <h5 style="font-size:0.8em">Created by:
       <%= link_to poll.user.username, user_path(poll.user.id) %></h5>
